@@ -29,11 +29,11 @@ public class Pagamento {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idLong;
+	private Long id;
 	
 	@NotNull
 	@Positive
-	private BigDecimal valorBigDecimal;
+	private BigDecimal valor;
 	
 	@NotBlank
 	@Size(max=100)
@@ -54,7 +54,11 @@ public class Pagamento {
 	@NotNull
 	@Enumerated(EnumType.STRING)
 	private Status status;
+	
+	@NotNull
 	private Long pedidoID;
+	
+	@NotNull
 	private Long formaPagamentoID;
 	
 

@@ -10,14 +10,14 @@ import lombok.Setter;
 @Setter
 public class PagamentoDto {
 
-	private Long idLong;
-	private BigDecimal valorBigDecimal;
+	private Long id;
+	private BigDecimal valor;
 	private String nome;
 	private String numero;
 	private String expiracao;
 	private String codigo;
 	private Status status;
-	private Long pedidoID;
 	private Long formaPagamentoID;
+	private Long pedidoID;
 	
 }

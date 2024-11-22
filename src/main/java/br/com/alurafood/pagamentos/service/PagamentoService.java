@@ -1,16 +1,18 @@
 package br.com.alurafood.pagamentos.service;
 
-import java.awt.print.Pageable;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import br.com.alurafood.pagamentos.dto.PagamentoDto;
 import br.com.alurafood.pagamentos.model.Pagamento;
 import br.com.alurafood.pagamentos.model.Status;
 import br.com.alurafood.pagamentos.repository.PagamentoRepository;
+import jakarta.persistence.EntityNotFoundException;
+
 
 @Service
 public class PagamentoService {
@@ -44,7 +46,7 @@ public class PagamentoService {
 	}
 	
 	public PagamentoDto atualizarPagamento(Long id, PagamentoDto dto) {
-		Pagamento pagamento = modelMapper.map(dto, Pagamento.class);0
+		Pagamento pagamento = modelMapper.map(dto, Pagamento.class);
 		pagamento.setStatus(Status.CRIADO);
 		repository.save(pagamento);
 		
